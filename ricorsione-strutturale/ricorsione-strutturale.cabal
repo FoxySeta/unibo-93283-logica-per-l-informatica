@@ -25,10 +25,6 @@ source-repository head
 
 library
   exposed-modules:
-      Crescenza
-      Parti
-      Permutazioni
-      Sottolista
   other-modules:
       Paths_ricorsione_strutturale
   hs-source-dirs:
