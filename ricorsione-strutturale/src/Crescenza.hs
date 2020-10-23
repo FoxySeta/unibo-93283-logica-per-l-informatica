@@ -1,0 +1,44 @@
+module Crescenza (
+    crescente,
+    destra,
+    sinistra
+) where
+
+data Albero = Int Int | Nodo Albero Albero
+
+crescente :: Albero -> Bool
+sinistra :: Albero -> Int
+destra :: Albero -> Int
+
+{-
+    Problema 3: dato un albero a, restituire "vero" se e solo se leggendo le
+    foglie da sinistra a destra si ottiene una successione crescente.
+
+    Es. crescente (Nodo (Nodo (Int 2) (Int 3)) (Int 4)) = True
+    Soluzione: crescente a
+-}
+
+crescente (Int _) = True
+crescente (Nodo a1 a2) = crescente a1 &&
+                         destra a1 <= sinistra a2 &&
+                         crescente a2
+
+{-
+    Problema 3.1: dato un albero a, restituire la sua foglia più a sinistra.
+
+    Es. sinistra Node (Node (Int 2) (Int 1)) (Int 6)) = 2
+    Soluzione: sinistra a
+-}
+
+sinistra (Int x) = x
+sinistra (Nodo a _) = sinistra(a)
+
+{-
+    Problema 3.2: dato un albero a, restituire la sua foglia più a destra.
+
+    Es. destra Node (Node (Int 2) (Int 1)) (Int 6)) = 6
+    Soluzione: destra a
+-}
+
+destra (Int x) = x
+destra (Nodo _ a) = destra(a)
