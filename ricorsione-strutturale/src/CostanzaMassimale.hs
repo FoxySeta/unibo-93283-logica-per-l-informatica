@@ -3,8 +3,8 @@ module CostanzaMassimale (
     costanzaPrefisso
 ) where
 
-costanzaMassimale :: (Num p, Ord p, Eq t) => [t] -> p
-costanzaPrefisso :: (Num p, Eq t) => t -> [t] -> p
+costanzaMassimale :: (Num p, Ord p, Eq t) => [t] -> p -- Problema 5
+costanzaPrefisso :: (Num p, Eq t) => t -> [t] -> p -- Problema 5.1
 
 {-
     Problema 5: data una lista l calcolare la lunghezza della sottolista di l

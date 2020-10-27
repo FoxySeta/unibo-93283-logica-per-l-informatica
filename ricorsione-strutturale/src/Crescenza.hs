@@ -1,25 +1,26 @@
 module Crescenza (
+    T(..),
     crescente,
     destra,
     sinistra
 ) where
 
-data Albero = Int Int | Nodo Albero Albero
+data T = Leaf Int | Node T T deriving Show
 
-crescente :: Albero -> Bool
-sinistra :: Albero -> Int
-destra :: Albero -> Int
+crescente :: T -> Bool -- Problema 3
+sinistra :: T -> Int -- Problema 3.1
+destra :: T -> Int -- Problema 3.2
 
 {-
     Problema 3: dato un albero a, restituire "vero" se e solo se leggendo le
     foglie da sinistra a destra si ottiene una successione crescente.
 
-    Es. crescente (Nodo (Nodo (Int 2) (Int 3)) (Int 4)) = True
+    Es. crescente (Node (Node (Int 2) (Int 3)) (Int 4)) = True
     Soluzione: crescente a
 -}
 
-crescente (Int _) = True
-crescente (Nodo a1 a2) = crescente a1 &&
+crescente (Leaf _) = True
+crescente (Node a1 a2) = crescente a1 &&
                          destra a1 <= sinistra a2 &&
                          crescente a2
 
@@ -30,8 +31,8 @@ crescente (Nodo a1 a2) = crescente a1 &&
     Soluzione: sinistra a
 -}
 
-sinistra (Int x) = x
-sinistra (Nodo a _) = sinistra(a)
+sinistra (Leaf x) = x
+sinistra (Node a _) = sinistra(a)
 
 {-
     Problema 3.2: dato un albero a, restituire la sua foglia più a destra.
@@ -40,5 +41,5 @@ sinistra (Nodo a _) = sinistra(a)
     Soluzione: destra a
 -}
 
-destra (Int x) = x
-destra (Nodo _ a) = destra(a)
+destra (Leaf x) = x
+destra (Node _ a) = destra(a)
