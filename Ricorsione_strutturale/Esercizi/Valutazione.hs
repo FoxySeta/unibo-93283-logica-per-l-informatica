@@ -1,3 +1,14 @@
+{-
+    Università di Bologna
+    Corso di laurea in Informatica
+    93283 - Logica per l'informatica
+
+    Stefano Volpe #969766
+    27/10/2020
+
+    Valutazione.hs
+-}
+
 module Valutazione(
     valutazione
 ) where

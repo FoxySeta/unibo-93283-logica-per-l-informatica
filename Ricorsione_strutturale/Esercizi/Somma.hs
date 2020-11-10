@@ -1,3 +1,14 @@
+{-
+    Università di Bologna
+    Corso di laurea in Informatica
+    93283 - Logica per l'informatica
+
+    Stefano Volpe #969766
+    28/10/2020
+
+    Somma.hs
+-}
+
 module Somma(
     N,
     sommaSX,

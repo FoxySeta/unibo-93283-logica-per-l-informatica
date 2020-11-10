@@ -1,32 +1,31 @@
-module Intersezione(
-    intersezione,
-    appartiene
+{-
+    Università di Bologna
+    Corso di laurea in Informatica
+    93283 - Logica per l'informatica
+
+    Stefano Volpe #969766
+    10/11/2020
+
+    Intersezione.hs
+-}
+
+
+module Intersezione
+    intersezione
 ) where
 
-intersezione :: Eq a => [a] -> [a] -> [a] -- Problema 7
-appartiene :: Eq t => t -> [t] -> Bool -- Problema 7.1
+import Parti(intersezioneBinaria)
 
 {-
-    Problema 7: date due liste l1 e l2, restituire la lista degli elementi
-    comuni a l1 e l2.
+    Problema 15: scrivere una funzione che, data in input una lista l di liste
+    di numeri, restituisca la lista o di tutti e soli i numeri che occorrono
+    in tutte le liste in l.
 
-    Es. intersezione (1 : 3 : 4 : 6 : []) (3 : 6 : 2 : 5 : 1 : []) =
-        (1 : 3 : 6 : [])
-    Soluzione: intersezione l1 l2
+    Es. o (1 : 2 : 3 : 4 : 5 : []) :
+          (2 : 3 : 4 : 5 : []) :
+          (1 : 2 : 3 : 4 : []) = 2 : 3 : 4 : []
+    Soluzione: o l
 -}
 
-intersezione [] _ = []
-intersezione (x : l1) l2 = if appartiene x l2 then
-                           x : (intersezione l1 l2) else
-                           intersezione l1 l2
-
-{-
-    Problema 7.1: dato x ed una lista l, restituire "vero" se e solo se x
-                  appartiene ad l
-
-    Es. appartiene 6 (3 : 6 : 2 : 5 : 1 : []) = True
-    Soluzione: appartiene x l
--}
-
-appartiene _ [] = False
-appartiene x (y : l) = x == y || (appartiene x l)
+intersezione [] = []
+intersezione (l : ll) = intersezioneBinaria l (o ll)

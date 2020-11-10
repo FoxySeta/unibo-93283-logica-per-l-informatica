@@ -1,3 +1,14 @@
+{-
+    Università di Bologna
+    Corso di laurea in Informatica
+    93283 - Logica per l'informatica
+
+    Stefano Volpe #969766
+    21/10/2020
+
+    Parti.hs
+-}
+
 module Parti (
     parti,
     unioneBinaria,
