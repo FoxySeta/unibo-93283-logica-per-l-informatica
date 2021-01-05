@@ -6,7 +6,7 @@
     Stefano Volpe #969766
     27/10/2020
 
-    Laboratorio3.hs
+    Laboratorio3valutato.hs
 -}
 
 {-
