@@ -22,3 +22,7 @@ instance Persona (Index, CodiceFiscale, String, String) Index CodiceFiscale wher
     key (id, _, _, _) = id
     value (_, cf, _, _) = cf
     default1 = CF "DOEJHN00A00H000A"
+
+main :: IO ()
+main =
+    putStrLn (search 4 [(2,"Anna","Rosa"), (4,"Luca","Chiatti"), (5,"Ugo","Rossi")])
