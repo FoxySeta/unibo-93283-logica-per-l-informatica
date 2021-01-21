@@ -16,7 +16,7 @@ empty1 = L1 []
 size1 (L1 []) = 0
 size1 (L1 (x:l)) = 1 + size1 (L1 l)
 insert1 x (L1 l) = L1 (x:l)
-is_full1 l = size l == 10
+is_full1 l = len l == 10
 
 accoda1 :: List1 -> [Int] -> List1
 accoda1 q l = accoda_brutto q l empty1 insert1 is_full1
@@ -35,7 +35,7 @@ accoda2 q l = accoda_brutto q l empty2 insert2 is_full2
 
 class Queue a b | a -> b where -- a implementa una lista di b
     empty :: a
-    size :: a -> Int
+    len :: a -> Int
     insert :: b -> a -> a
     is_full :: a -> Bool
 
@@ -46,17 +46,17 @@ accoda queue (x:l) =
 
 instance Queue List1 Int where
     empty = L1 []
-    size (L1 []) = 0
-    size (L1 (x : l)) = 1 + size (L1 l)
+    len (L1 []) = 0
+    len (L1 (x : l)) = 1 + len (L1 l)
     insert x (L1 l) = L1 (x : l)
-    is_full l = size l == 10
+    is_full l = len l == 10
 
 -- accoda (L1 [1,2,3]) [4,5,6]
 
 instance Queue List2 Int where
     empty = L2 [] 0
-    size (L2 _ s) = s
+    len (L2 _ s) = s
     insert x (L2 l s) = L2 (x : l) (s + 1)
-    is_full x = size x >= 10
+    is_full x = len x >= 10
 
 -- accoda (L2 [1,2,3] 3) [4,5,6]
