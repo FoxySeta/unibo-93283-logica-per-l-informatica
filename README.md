@@ -1,2 +1,2 @@
-# Unibo_93283_Logica_per_informatica
-Esercizi e progetti per il mio corso di logica per l'informatica all'Università di Bologna
+# unibo-93283-logica-per-l-informatica
+Exercises for the Unversity of Bologna Logic for Computer Science course (a.y. 2020-21).
